@@ -1,0 +1,225 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/tabbar/home/home",
+			"style": {
+				"navigationBarBackgroundColor": "#fff",
+				"navigationBarTitleText": "首页",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/tabbar/my/my",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#fe5572",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/tabbar/shop/shop",
+			"style": {
+				"navigationBarTitleText": "购物车",
+				"navigationBarBackgroundColor": "#fff",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/tabbar/good/good",
+			"style": {
+				"navigationBarTitleText": "积分商城",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#fe5572",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/order/order",
+			"style": {
+				"navigationBarTitleText": "订单",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/goodsDetails/goodsDetails",
+			"style": {
+				"navigationBarTitleText": "商品详情",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/evaluate/evaluate",
+			"style": {
+				"navigationBarTitleText": "用户评价",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/orderInfo/orderInfo",
+			"style": {
+				"navigationBarTitleText": "确认订单信息",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/address/address",
+			"style": {
+				"navigationBarTitleText": "收货地址",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/address/addAddress",
+			"style": {
+				"navigationBarTitleText": "新增地址",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/pay/pay",
+			"style": {
+				"navigationBarTitleText": "支付结果",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/order/orderDetails",
+			"style": {
+				"navigationBarTitleText": "订单详情",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/logistics/logistics",
+			"style": {
+				"navigationBarTitleText": "物流信息",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/retreat/retreat",
+			"style": {
+				"navigationBarTitleText": "选择售后类型",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/retreat/retreatForm",
+			"style": {
+				"navigationBarTitleText": "申请售后",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/retreat/retreatStatus",
+			"style": {
+				"navigationBarTitleText": "申请售后",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/evaluate/addEvaluate",
+			"style": {
+				"navigationBarTitleText": "发布评价",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/retreat/retreatOrder",
+			"style": {
+				"navigationBarTitleText": "退款/售后",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/retreat/retreatDetails",
+			"style": {
+				"navigationBarTitleText": "售后详情",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/retreat/retreatOut",
+			"style": {
+				"navigationBarTitleText": "寄回商品",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/integral/integral",
+			"style": {
+				"navigationBarTitleText": "积分记录",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/collect/collect",
+			"style": {
+				"navigationBarTitleText": "我的收藏",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}
+	    ,{
+            "path" : "pages/exchange/exchange",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的兑换",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/coupon/coupon",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "优惠券",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "",
+		"navigationBarBackgroundColor": "#fff",
+		"backgroundColor": "#F8F8F8",
+		"app-plus": {
+			"background": "#efeff4"
+		}
+	},
+	"tabBar": {
+		"color": "#999",
+		"selectedColor": "#3C7FFF",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "white",
+		"list": [{
+				"pagePath": "pages/tabbar/home/home",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/tabbar/good/good",
+				"text": "积分商城"
+			},
+			{
+				"pagePath": "pages/tabbar/shop/shop",
+				"text": "购物车"
+			},
+			{
+				"pagePath": "pages/tabbar/my/my",
+				"text": "我的"
+			}
+		]
+	},
+	"uniIdRouter": {},
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"lyz-(.*)": "@/components/lyz-ui/lyz-$1/lyz-$1.vue" // 匹配lyz-ui内的vue文件
+		}
+	}
+}
