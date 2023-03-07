@@ -15,7 +15,7 @@
 					<view class="flex-fitem">
 						<view class="color_333 font_26 m_b_8">dunk panda</view>
 						<view class="flex flex-aic m_b_4">
-							<view class="color_999 font_24 m_r_24">长沙；于金兰</view>
+							<view class="color_999 font_24 m_r_24">长沙；</view>
 							<uni-icons type="bottom" size="14" color="#999999"></uni-icons>
 						</view>
 						<view class="flex-aic flexr-jsb">
