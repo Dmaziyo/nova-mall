@@ -1,4 +1,4 @@
-import {getMinProLoginInfo} from '@/api/loginApi.js'
+import { getMinProLoginInfo } from '@/api/loginApi.js'
 /**
  * 微信登陆方法
  * @param {Function} callback  登陆信息回调
@@ -12,35 +12,35 @@ import {getMinProLoginInfo} from '@/api/loginApi.js'
  *  })
  */
 export const login = (callback) => {
-	let token = uni.getStorageSync('token')
-	if (token) {
-		callback && callback(token, uni.getStorageSync('userInfo'))
-		return
-	} else {
-	uni.login({
-		provider: 'weixin',
-		success: (res) => {
-			callback(res)
-			// //接口根据项目情况而定 callback返回 token和用户信息
-			// getMinProLoginInfo({code:res.code}).then((res) => {
-			// 	console.log(res)
-			// 	uni.setStorageSync('userInfo',res.data)
-			// 	uni.setStorageSync('token',res.data.token || '')
-			// 	if(isBinDing && !res.data.bindStatus && !res.data.token) {
-			// 		uni.navigateTo({
-			// 			url:"/pages/binding/binding"
-			// 		})
-			// 	} else {
-			// 		callback && callback(res.data.token,res.data)
-			// 	}
-			// })
-		},
-		fail: () => {
-			uni.showToast({
-				icon: "none",
-				title: '登录失败'
-			})
-		}
-	})
-	}
+  let token = uni.getStorageSync('token')
+  if (token) {
+    callback && callback(token, uni.getStorageSync('userInfo'))
+    return
+  } else {
+    uni.login({
+      provider: 'weixin',
+      success: (res) => {
+        callback(res)
+        // //接口根据项目情况而定 callback返回 token和用户信息
+        // getMinProLoginInfo({code:res.code}).then((res) => {
+        // 	console.log(res)
+        // 	uni.setStorageSync('userInfo',res.data)
+        // 	uni.setStorageSync('token',res.data.token || '')
+        // 	if(isBinDing && !res.data.bindStatus && !res.data.token) {
+        // 		uni.navigateTo({
+        // 			url:"/pages/binding/binding"
+        // 		})
+        // 	} else {
+        // 		callback && callback(res.data.token,res.data)
+        // 	}
+        // })
+      },
+      fail: () => {
+        uni.showToast({
+          icon: 'none',
+          title: '登录失败',
+        })
+      },
+    })
+  }
 }

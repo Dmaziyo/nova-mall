@@ -5,15 +5,15 @@
   "description": "custom-waterfalls-flow-vue3-2",
   "keywords": [
     "custom-waterfalls-flow-vue3-2"
-],
+  ],
   "repository": "",
   "engines": {
     "HBuilderX": "^3.1.0"
   },
   "dcloudext": {
     "category": [
-        "前端组件",
-        "通用组件"
+      "前端组件",
+      "通用组件"
     ],
     "sale": {
       "regular": {

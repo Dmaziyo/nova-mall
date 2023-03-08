@@ -4,13 +4,11 @@
   </view>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>
 
 <style scoped lang="scss">
-.bg-color {
-  height: 470rpx;
-  background: #1E385A;
-}
+  .bg-color {
+    height: 470rpx;
+    background: #1e385a;
+  }
 </style>

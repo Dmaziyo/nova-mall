@@ -1,24 +1,24 @@
 import { getColumns, isObject, isFunction } from '../utils'
 export const commonMixin = {
-  data () {
+  data() {
     return {
       isConfirmChange: false,
       indicatorStyle: `height: 34px`,
-      pressTimeout: null
+      pressTimeout: null,
     }
   },
-  created () {
+  created() {
     this.init('init')
   },
   methods: {
-    init (changeType) {
+    init(changeType) {
       if (this.list && this.list.length) {
         const column = getColumns({
           value: this.value,
           list: this.list,
           mode: this.mode,
           props: this.props,
-          level: this.level
+          level: this.level,
         })
         const { columns, value, item, index } = column
         this.selectValue = value
@@ -29,11 +29,11 @@ export const commonMixin = {
           value: this.selectValue,
           item: this.selectItem,
           index: this.pickerValue,
-          change: changeType
+          change: changeType,
         })
       }
     },
-    touchstart (e) {
+    touchstart(e) {
       if (!this.pressEnable) return
       clearTimeout(this.pressTimeout)
       this.pressTimeout = setTimeout(() => {
@@ -60,34 +60,34 @@ export const commonMixin = {
         // #endif
         uni.showToast({
           title: toastTitle,
-          icon: 'none'
+          icon: 'none',
         })
       }, this.pressTime)
     },
-    touchmove () {
+    touchmove() {
       if (!this.pressEnable) return
       clearTimeout(this.pressTimeout)
     },
-    touchend () {
+    touchend() {
       if (!this.pressEnable) return
       clearTimeout(this.pressTimeout)
     },
-    getLabel (item, rowIndex, columnIndex) {
+    getLabel(item, rowIndex, columnIndex) {
       if (this.formatter && isFunction(this.formatter)) {
         return this.formatter({ item, rowIndex, columnIndex })
       } else {
         return item[this.props.label] || item
       }
-    }
+    },
   },
   watch: {
-    value () {
+    value() {
       if (!this.isConfirmChange) {
         this.init('value')
       }
     },
-    list () {
+    list() {
       this.init('list')
-    }
-  }
+    },
+  },
 }

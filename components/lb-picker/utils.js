@@ -5,7 +5,7 @@
  * @param {*} val
  * @returns true/false
  */
-export function isObject (val) {
+export function isObject(val) {
   return Object.prototype.toString.call(val) === '[object Object]'
 }
 
@@ -16,7 +16,7 @@ export function isObject (val) {
  * @param {*} val
  * @returns true/false
  */
-export function isFunction (val) {
+export function isFunction(val) {
   return Object.prototype.toString.call(val) === '[object Function]'
 }
 
@@ -28,7 +28,7 @@ export function isFunction (val) {
  * @param {number} [type=2] 查询不到value数据返回数据类型 1空值null 2默认第一个选项
  * @returns
  */
-export function getColumns ({ value, list, mode, props, level }, type = 2) {
+export function getColumns({ value, list, mode, props, level }, type = 2) {
   let pickerValue = []
   let pickerColumns = []
   let selectValue = []
@@ -36,7 +36,7 @@ export function getColumns ({ value, list, mode, props, level }, type = 2) {
   let columnsInfo = null
   switch (mode) {
     case 'selector':
-      let index = list.findIndex(item => {
+      let index = list.findIndex((item) => {
         return isObject(item) ? item[props.value] === value : item === value
       })
       if (index === -1 && type === 1) {
@@ -44,16 +44,14 @@ export function getColumns ({ value, list, mode, props, level }, type = 2) {
       } else {
         index = index > -1 ? index : 0
         selectItem = list[index]
-        selectValue = isObject(selectItem)
-          ? selectItem[props.value]
-          : selectItem
+        selectValue = isObject(selectItem) ? selectItem[props.value] : selectItem
         pickerColumns = list
         pickerValue = [index]
         columnsInfo = {
           index: pickerValue,
           value: selectValue,
           item: selectItem,
-          columns: pickerColumns
+          columns: pickerColumns,
         }
       }
       break
@@ -63,7 +61,7 @@ export function getColumns ({ value, list, mode, props, level }, type = 2) {
         const defaultValue = value || []
         if (index < level) {
           const value = defaultValue[index] || ''
-          let i = data.findIndex(item => item[props.value] === value)
+          let i = data.findIndex((item) => item[props.value] === value)
           if (i === -1 && type === 1) return
           i = i > -1 ? i : 0
           pickerValue[index] = i
@@ -83,23 +81,19 @@ export function getColumns ({ value, list, mode, props, level }, type = 2) {
           index: pickerValue,
           value: selectValue,
           item: selectItem,
-          columns: pickerColumns
+          columns: pickerColumns,
         }
       }
       break
     case 'unlinkedSelector':
       list.forEach((item, i) => {
-        let index = item.findIndex(item => {
-          return isObject(item)
-            ? item[props.value] === value[i]
-            : item === value[i]
+        let index = item.findIndex((item) => {
+          return isObject(item) ? item[props.value] === value[i] : item === value[i]
         })
         if (index === -1 && type === 1) return
         index = index > -1 ? index : 0
         const columnItem = list[i][index]
-        const valueItem = isObject(columnItem)
-          ? columnItem[props.value]
-          : columnItem
+        const valueItem = isObject(columnItem) ? columnItem[props.value] : columnItem
         pickerValue[i] = index
         selectValue[i] = valueItem
         selectItem[i] = columnItem
@@ -112,7 +106,7 @@ export function getColumns ({ value, list, mode, props, level }, type = 2) {
           index: pickerValue,
           value: selectValue,
           item: selectItem,
-          columns: pickerColumns
+          columns: pickerColumns,
         }
       }
       break
