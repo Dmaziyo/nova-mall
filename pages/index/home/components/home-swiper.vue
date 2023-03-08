@@ -22,7 +22,7 @@
 
 <style lang="scss" scoped>
 .swiper {
-		height: 304rpx;
+		height: 470rpx;
 		.swiper-item {
 			width: 100%;
 			height: 100%;

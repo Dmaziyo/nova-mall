@@ -1,7 +1,8 @@
 <template>
 	<view>
-		<home-search></home-search>
-		<home-swiper></home-swiper>
+<!--		<home-search></home-search>-->
+<!--		<home-swiper></home-swiper>-->
+    <HomeHeader></HomeHeader>
 		<home-grid></home-grid>
 <!--		<image class="bar_box" src="http://www.liwanying.top/applate-icon/bar.png" mode="widthFix"></image>-->
 		<view class="tabs_box">
@@ -12,11 +13,12 @@
 </template>
 
 <script setup>
-	import homeSearch from './components/home-search.vue'
-	import homeSwiper from './components/home-swiper.vue'
-	import homeGrid from './components/home-grid.vue'
-	import homeFlow from './components/home-flow.vue'
+	import HomeSearch from './components/home-search.vue'
+	import HomeSwiper from './components/home-swiper.vue'
+	import HomeGrid from './components/home-grid.vue'
+	import HomeFlow from './components/home-flow.vue'
 	import {ref} from 'vue'
+  import HomeHeader from "./components/HomeHeader.vue";
 	let tabIndex = ref(0)
 	const getTab = (id) => {
 		console.log(id)
