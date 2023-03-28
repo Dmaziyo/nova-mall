@@ -29,7 +29,7 @@
   import HomeGrid from './components/home-grid.vue'
   import HomeFlow from './components/home-flow.vue'
   import { ref } from 'vue'
-  import HomeHeader from './components/HomeHeader.vue'
+  import HomeHeader from './components/home-header.vue'
   let tabIndex = ref(0)
   const getTab = (id) => {
     console.log(id)
