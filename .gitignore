@@ -1,7 +1,6 @@
 .git/
 .hbuilderx/
 unpackage/
-uni_modules/
 
 node_modules/
 .idea
