@@ -19,7 +19,7 @@
     <scroll-view scroll-x="true" scroll-left="120">
       <view class="content">
         <view v-for="item in list" :key="item" class="img-wrapper">
-          <img class="img-item" src="../../../../assets/img/200.png" alt="" />
+          <img class="img-item" src="../../../../assets/img/200-blue.png" alt="" />
           <view class="title">Nike Air Max</view>
           <view class="number">101.00</view>
           <view class="desc">这是描述描述</view>

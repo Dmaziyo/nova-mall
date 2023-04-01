@@ -2,16 +2,17 @@
   <view>
     <HomeHeader></HomeHeader>
     <view class="content-container">
-      <CategoriesSwiper></CategoriesSwiper>
+      <CategoriesProduct></CategoriesProduct>
       <view class="divider"></view>
-      <CategoriesSwiper></CategoriesSwiper>
+      <PopularProduct></PopularProduct>
     </view>
   </view>
 </template>
 
 <script setup>
   import HomeHeader from './components/home-header.vue'
-  import CategoriesSwiper from '@/pages/index/home/components/categories-swiper.vue'
+  import CategoriesProduct from './components/categories-product.vue'
+  import PopularProduct from './components/popular-product.vue'
 </script>
 
 <style lang="scss" scoped>

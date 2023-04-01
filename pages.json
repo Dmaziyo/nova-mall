@@ -40,10 +40,10 @@
     {
       "path": "pages/tabbar/good/good",
       "style": {
-        "navigationBarTitleText": "积分商城",
-        "navigationBarTextStyle": "white",
-        "navigationBarBackgroundColor": "#fe5572",
-        "enablePullDownRefresh": false
+//        "navigationBarTitleText": "积分商城",
+//        "navigationBarTextStyle": "white",
+//        "navigationBarBackgroundColor": "#fe5572",
+//        "enablePullDownRefresh": false
       }
     },
     {
