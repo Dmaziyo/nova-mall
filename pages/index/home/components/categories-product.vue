@@ -1,8 +1,8 @@
 <template>
   <view class="page">
     <view class="header">
-      <view class="header-left"> CATEGORIES </view>
-      <view class="header-right"> See All </view>
+      <view class="header-left"> 分类 </view>
+      <view class="header-right"> 全部 </view>
     </view>
     <scroll-view scroll-x="true" scroll-left="120">
       <view class="scroll-view">

@@ -1,4 +1,5 @@
 import App from './App'
+import '@/assets/font/text.css'
 
 // #ifndef VUE3
 import Vue from 'vue'

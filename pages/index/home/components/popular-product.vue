@@ -1,8 +1,8 @@
 <template>
   <view class="page">
     <view class="header">
-      <view class="header-left"> POPULAR PRODUCT </view>
-      <view class="header-right"> See All </view>
+      <view class="header-left">热门产品</view>
+      <view class="header-right">全部</view>
     </view>
     <scroll-view scroll-x="true" scroll-left="120">
       <view class="content">
@@ -65,6 +65,7 @@
     margin-bottom: 10upx;
     padding: 10upx 30upx;
     .header-left {
+      font-family: 'dingding';
       color: #000;
       font-size: 32upx;
       font-weight: 600;
