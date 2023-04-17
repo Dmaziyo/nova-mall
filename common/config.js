@@ -1,6 +1,6 @@
 'use strict'
 const dev = {
-  baseUrl: 'https://www.xxxxxxxx.com/api/wechat', // dev server
+  baseUrl: 'http://localhost:7001/admin', // dev server
   uploadImageUrl: 'https://xxxxxxx.oss-cn-hangzhou.aliyuncs.com/',
   AccessKeySecret: '318ESFytpYSyrdDYfxhjHkcmmCSrxd',
   OSSAccessKeyId: 'LTAI7yDacD6sud82oYiB2ChT',

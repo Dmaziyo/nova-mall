@@ -7,10 +7,10 @@
     <scroll-view scroll-x="true" scroll-left="120">
       <view class="scroll-view">
         <view
-          :class="['scroll-item', activeName === item.value ? 'active' : '']"
+          :class="['scroll-item', activeName == item.value ? 'active' : '']"
           v-for="item in categories"
           :key="item.value"
-          @click="scrollItemHandler(item)"
+          @click="getProductByCategory"
           >{{ item.label }}</view
         >
       </view>
@@ -18,11 +18,15 @@
 
     <scroll-view scroll-x="true" scroll-left="120">
       <view class="content">
-        <view v-for="item in list" :key="item" class="img-wrapper">
-          <img class="img-item" src="../../../../assets/img/200-blue.png" alt="" />
-          <view class="title">Nike Air Max</view>
+        <view v-for="item in products" :key="item" class="img-wrapper">
+          <img class="img-item" :src="item.url" alt="" />
+          <view class="title">{{ item.title }}</view>
+          <view class="number">{{ item.price }}</view>
+          <view class="desc">{{ item.desc }}</view>
+          <!-- <img class="img-item" src="../../../../assets/img/200-blue.png" alt="" /> -->
+          <!-- <view class="title">Nike Air Max</view>
           <view class="number">101.00</view>
-          <view class="desc">这是描述描述</view>
+          <view class="desc">这是描述描述</view> -->
         </view>
       </view>
     </scroll-view>
@@ -30,11 +34,15 @@
 </template>
 
 <script setup>
-  import { reactive, ref, toRefs } from 'vue'
+  import { onMounted, reactive, toRefs } from 'vue'
+  import {
+    getProductCategory as _getProductCategory,
+    getProductByCategory as _getProductByCategory,
+  } from '@/api/product'
 
-  const list = ref([1, 2, 3, 4, 5])
+  // const list = ref([1, 2, 3, 4, 5])
   const state = reactive({
-    activeName: 'Tops',
+    activeName: 7,
     categories: [
       {
         label: 'Shoes',
@@ -57,13 +65,48 @@
         value: 'Kid',
       },
     ],
+    products: [],
   })
 
   const scrollItemHandler = (item) => {
     state.activeName = item.value
   }
 
-  const { categories, activeName } = toRefs(state)
+  const getProductCategory = async () => {
+    try {
+      const { data } = await _getProductCategory()
+      state.categories = data.map((v) => {
+        return { label: v.name, value: v.id }
+      })
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  const getProductByCategory = async () => {
+    try {
+      const { data } = await _getProductByCategory({
+        categoryId: state.activeName,
+      })
+      state.products = data.map((v) => {
+        return {
+          url: v.pic,
+          title: v.name,
+          price: v.price,
+          desc: v.detail_desc,
+        }
+      })
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  onMounted(async () => {
+    await getProductCategory()
+    await getProductByCategory()
+  })
+
+  const { categories, activeName, products } = toRefs(state)
 </script>
 
 <style lang="scss" scoped>

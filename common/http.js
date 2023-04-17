@@ -33,12 +33,12 @@ export default function http(opts, data = {}) {
       },
       dataType: 'json',
       success: ({ data: res }) => {
-        console.log('uni.request--1--', {
+        console.log('uni.request--', {
           url: requestUrl,
           data: data,
           method: opts.method,
         })
-        console.log('uni.request--2--', res)
+        console.log('uni.respond--2--', res)
         if (res.code == 401) {
           reject(res)
           uni.removeStorageSync('userInfo') // 清除本地用户信息
