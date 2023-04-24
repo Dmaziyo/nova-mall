@@ -11,7 +11,7 @@
           <radio style="transform: scale(0.6)" checked="true" color="#fe5572" />
           <image
             class="shop_item_img m_r_16"
-            src="https://cdn.becase.xyz/202303071628801.png"
+            src="http://cdn.becase.top/202303071628801.png"
             mode="aspectFill"
           ></image>
           <view class="flex-fitem">

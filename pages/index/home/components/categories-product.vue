@@ -10,7 +10,7 @@
           :class="['scroll-item', activeName == item.value ? 'active' : '']"
           v-for="item in categories"
           :key="item.value"
-          @click="getProductByCategory"
+          @click="getProductByCategory(item)"
           >{{ item.label }}</view
         >
       </view>
@@ -23,10 +23,6 @@
           <view class="title">{{ item.title }}</view>
           <view class="number">{{ item.price }}</view>
           <view class="desc">{{ item.desc }}</view>
-          <!-- <img class="img-item" src="../../../../assets/img/200-blue.png" alt="" /> -->
-          <!-- <view class="title">Nike Air Max</view>
-          <view class="number">101.00</view>
-          <view class="desc">这是描述描述</view> -->
         </view>
       </view>
     </scroll-view>
@@ -68,10 +64,6 @@
     products: [],
   })
 
-  const scrollItemHandler = (item) => {
-    state.activeName = item.value
-  }
-
   const getProductCategory = async () => {
     try {
       const { data } = await _getProductCategory()
@@ -83,8 +75,10 @@
     }
   }
 
-  const getProductByCategory = async () => {
+  const getProductByCategory = async (item) => {
     try {
+      state.activeName = item.value
+      console.log('activeName', state.activeName)
       const { data } = await _getProductByCategory({
         categoryId: state.activeName,
       })

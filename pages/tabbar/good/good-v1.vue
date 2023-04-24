@@ -4,7 +4,7 @@
       <view class="flex flex-aic">
         <image
           class="integral_user_img m_r_24"
-          src="https://cdn.becase.xyz/202303071628801.png"
+          src="http://cdn.becase.top/202303071628801.png"
           mode=""
         ></image>
         <view class="flex-fitem">
