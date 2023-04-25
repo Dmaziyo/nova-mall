@@ -39,7 +39,7 @@
   const columns = ref([
     {
       title: '个人信息',
-      pages: '',
+      pages: '/pages/profile/components/self-info',
       icon: 'http://www.liwanying.top/applate-icon/wodemiaosha@2x.png',
     },
     {

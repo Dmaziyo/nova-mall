@@ -68,6 +68,13 @@
       }
     },
     {
+      "path": "pages/profile/components/self-info",
+      "style": {
+        "navigationBarTitleText": "个人信息",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/goodsDetails/goodsDetails",
       "style": {
         "navigationBarTitleText": "商品详情",
