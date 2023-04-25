@@ -1,7 +1,7 @@
 <template>
-  <div class="changepwd">
+  <view class="changepwd">
     <form class="form-container" ref="form1">
-      <div class="form-item">
+      <view class="form-item">
         <label class="form-label">旧密码</label>
         <input
           class="form-input"
@@ -9,8 +9,8 @@
           placeholder="请输入旧密码"
           v-model="model1.userInfo.oldpwd"
         />
-      </div>
-      <div class="form-item">
+      </view>
+      <view class="form-item">
         <label class="form-label">新密码</label>
         <input
           class="form-input"
@@ -18,8 +18,8 @@
           placeholder="请输入新密码"
           v-model="model1.userInfo.newpwd"
         />
-      </div>
-      <div class="form-item">
+      </view>
+      <view class="form-item">
         <label class="form-label">确认密码</label>
         <input
           class="form-input"
@@ -27,10 +27,10 @@
           placeholder="请再次输入新密码"
           v-model="model1.userInfo.newpwdr"
         />
-      </div>
+      </view>
     </form>
     <button class="submit-btn" @click="submit">修改</button>
-  </div>
+  </view>
 </template>
 
 <script setup>
@@ -82,15 +82,15 @@
     font-size: 16px;
     flex-grow: 1;
   }
-
   .submit-btn {
-    background-color: #42b983;
+    background-color: #fe5572;
     color: #fff;
     border: none;
-    border-radius: 3px;
-    padding: 12px 20px;
+    border-radius: 15px;
+    padding: 5px;
     font-size: 16px;
     cursor: pointer;
     margin-top: 30px;
+    width: 100px;
   }
 </style>

@@ -58,6 +58,12 @@
       icon: 'http://www.liwanying.top/applate-icon/fenxiaozhongxin@2x.png',
     },
   ])
+
+  const toNav = (pages) => {
+    uni.navigateTo({
+      url: pages,
+    })
+  }
 </script>
 
 <style lang="scss">
