@@ -52,6 +52,20 @@
         "navigationBarTitleText": "订单",
         "enablePullDownRefresh": false
       }
+    }, 
+    {
+      "path": "pages/profile/profile",
+      "style": {
+        "navigationBarTitleText": "个人中心",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/profile/components/password",
+      "style": {
+        "navigationBarTitleText": "修改密码",
+        "enablePullDownRefresh": false
+      }
     },
     {
       "path": "pages/goodsDetails/goodsDetails",

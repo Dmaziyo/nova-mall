@@ -27,110 +27,37 @@
         </view>
       </view>
     </view>
-    <view style="padding: 20rpx 24rpx 12rpx">
-      <view class="my_vip_box boxs_bb flex flex-aic font_40 color_904d00"><text>Lv.0</text></view>
+    <view style="padding-bottom: 100rpx">
+      <my-tools :columns="columns"></my-tools>
     </view>
-    <view class="my_order_card boxs_bb bgc_fff">
-      <view class="flex-aic flexr-jsb my_order_card_title">
-        <text class="color_333 font_28">我的订单</text>
-        <view class="flex flex-aic" @tap="toOrder('all')">
-          <text class="color_999 font_28 m_r_8">查看全部</text>
-          <uni-icons color="#999999" type="forward" size="14"></uni-icons>
-        </view>
-      </view>
-      <view class="flex-aic flexr-jsa color_333 font_24">
-        <view class="tac" @tap="toNav('/pages/order/order')">
-          <image
-            class="my_order_icon m_b_8"
-            src="http://www.liwanying.top/applate-icon/daifukuan.png"
-            mode=""
-          ></image>
-          <view>待付款</view>
-        </view>
-        <view class="tac" @tap="toNav('/pages/order/order')">
-          <image
-            class="my_order_icon m_b_8"
-            src="http://www.liwanying.top/applate-icon/daifahuo.png"
-            mode=""
-          ></image>
-          <view>待发货</view>
-        </view>
-        <view class="tac" @tap="toNav('/pages/order/order')">
-          <image
-            class="my_order_icon m_b_8"
-            src="http://www.liwanying.top/applate-icon/daishouhuo.png"
-            mode=""
-          ></image>
-          <view>待收货</view>
-        </view>
-        <view class="tac" @tap="toNav('/pages/order/order')">
-          <image
-            class="my_order_icon m_b_8"
-            src="http://www.liwanying.top/applate-icon/daipingjia.png"
-            mode=""
-          ></image>
-          <view>待评价</view>
-        </view>
-        <view class="tac" @tap="toRetreatOrder">
-          <image
-            class="my_order_icon m_b_8"
-            src="http://www.liwanying.top/applate-icon/tuikuan.png"
-            mode=""
-          ></image>
-          <view>退款/售后</view>
-        </view>
-      </view>
-    </view>
-    <my-tools :columns="columns"></my-tools>
-    <lyz-tab-bar pagePath="pages/tabbar/my/my"></lyz-tab-bar>
   </view>
 </template>
 
 <script setup>
-  import myTools from './components/my-tools.vue'
+  import myTools from '../tabbar/my/components/my-tools.vue'
   import { ref } from 'vue'
   const columns = ref([
     {
-      title: '我的秒杀',
+      title: '个人信息',
       pages: '',
       icon: 'http://www.liwanying.top/applate-icon/wodemiaosha@2x.png',
     },
     {
-      title: '我的信息',
-      pages: '/pages/profile/profile',
+      title: '修改密码',
+      pages: '/pages/profile/components/password',
       icon: 'http://www.liwanying.top/applate-icon/wodexinxi@2x.png',
     },
     {
-      title: '兑换记录',
+      title: '修改手机',
       pages: '/pages/exchange/exchange',
       icon: 'http://www.liwanying.top/applate-icon/duihuanjilu@2x.png',
     },
     {
-      title: '分销中心',
+      title: '我的会员',
       pages: '',
       icon: 'http://www.liwanying.top/applate-icon/fenxiaozhongxin@2x.png',
     },
-    {
-      title: '优惠券',
-      pages: '/pages/coupon/coupon',
-      icon: 'http://www.liwanying.top/applate-icon/youhuiquan@2x.png',
-    },
   ])
-  const toOrder = (val) => {
-    uni.navigateTo({
-      url: '/pages/order/order',
-    })
-  }
-  const toNav = (pages) => {
-    uni.navigateTo({
-      url: pages,
-    })
-  }
-  const toRetreatOrder = () => {
-    uni.navigateTo({
-      url: '/pages/retreat/retreatOrder',
-    })
-  }
 </script>
 
 <style lang="scss">
