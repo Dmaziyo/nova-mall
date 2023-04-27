@@ -49,6 +49,12 @@
               selectedIconPath: 'http://www.liwanying.top/applate-icon/shouyexuanzhong.png',
             },
             {
+              text: '商品分类',
+              pagePath: 'pages/tabbar/goodsCategory/goodsCategory',
+              iconPath: 'http://www.liwanying.top/applate-icon/wode.png',
+              selectedIconPath: 'http://www.liwanying.top/applate-icon/wodexuanzhong.png',
+            },
+            {
               text: '积分商城',
               pagePath: 'pages/tabbar/good/good',
               iconPath: 'http://www.liwanying.top/applate-icon/jifenshangcheng.png',

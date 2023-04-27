@@ -40,10 +40,18 @@
     {
       "path": "pages/tabbar/good/good",
       "style": {
+        
 //        "navigationBarTitleText": "积分商城",
 //        "navigationBarTextStyle": "white",
 //        "navigationBarBackgroundColor": "#fe5572",
 //        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/tabbar/goodsCategory/goodsCategory",
+      "style": {
+          "navigationStyle": "custom" // 隐藏系统导航栏
+        // "enablePullDownRefresh": false
       }
     },
     {
@@ -77,7 +85,7 @@
     {
       "path": "pages/goodsDetails/goodsDetails",
       "style": {
-        "navigationBarTitleText": "商品详情",
+        "navigationBarTitleText": "商品分类",
         "enablePullDownRefresh": false
       }
     },
@@ -229,6 +237,10 @@
       {
         "pagePath": "pages/tabbar/home/home",
         "text": "首页"
+      },
+      {
+        "pagePath": "pages/tabbar/goodsCategory/goodsCategory",
+        "text": "商品分类"
       },
       {
         "pagePath": "pages/tabbar/good/good",
