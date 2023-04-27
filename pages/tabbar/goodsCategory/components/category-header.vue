@@ -1,6 +1,6 @@
 <template>
   <view class="route-header">
-    <category-route
+    <!-- <category-route
       @iconClick="clickHandler"
       v-for="item in list"
       :iconType="item.iconType"
@@ -8,21 +8,31 @@
       :key="item.text"
       :activeType="item.activeType"
       :checked="item.text === current"
-    ></category-route>
+    ></category-route> -->
+    <view v-for="item in routeList" class="category-link" :key="item.text">
+      <view class="icon-box">
+        <uni-icons
+          @click="clickHandler(item.text, item.url)"
+          style="font-size: 30px"
+          class="back-btn iconfont"
+          :type="item.text === current ? item.activeType : item.iconType"
+        />
+      </view>
+      <view>{{ item.text }}</view>
+    </view>
   </view>
 </template>
 
 <script>
-  import categoryRoute from './category-route.vue'
-
   export default {
-    components: {
-      categoryRoute,
+    props: {
+      routeList: Array,
     },
     methods: {
       // 返回上一页
-      clickHandler(val) {
-        this.current = val
+      clickHandler(text, url) {
+        console.log(url)
+        this.current = text
       },
     },
     data() {
@@ -61,7 +71,7 @@
           {
             iconType: 'gear',
             activeType: 'gear-filled',
-            text: '母婴亲子',
+            text: '电子设备',
             url: 'link',
           },
         ],
@@ -78,5 +88,18 @@
     display: flex;
     column-gap: 30px;
     overflow-x: scroll;
+  }
+  .category-link {
+    font-size: 12px;
+    white-space: nowrap;
+    .icon-box {
+      background-color: #f7f7f7;
+      padding: 8px;
+      border-radius: 50%;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5px;
   }
 </style>
