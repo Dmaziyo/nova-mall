@@ -14,12 +14,17 @@ app.$mount()
 // #ifdef VUE3
 import { createSSRApp } from 'vue'
 
-import { Sidebar, SidebarItem } from 'vant'
+import { Sidebar, SidebarItem, Card, Tag, Button, DropdownMenu, DropdownItem } from 'vant'
 
 export function createApp() {
   const app = createSSRApp(App)
   app.use(Sidebar)
   app.use(SidebarItem)
+  app.use(Card)
+  app.use(Tag)
+  app.use(Button)
+  app.use(DropdownMenu)
+  app.use(DropdownItem)
   return {
     app,
   }

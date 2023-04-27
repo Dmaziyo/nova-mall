@@ -2,7 +2,10 @@
   <view>
     <category-header></category-header>
     <category-nav :routeList="routeList"></category-nav>
-    <side-bar :sideList="sideList" @sideChange="sideChangeHandler"></side-bar>
+    <view class="content">
+      <side-bar :sideList="sideList" @sideChange="sideChangeHandler"></side-bar>
+      <filter-tab :goodsList="goodsList"></filter-tab>
+    </view>
   </view>
 </template>
 
@@ -10,11 +13,13 @@
   import categoryHeader from './components/category-header.vue'
   import categoryNav from './components/category-nav.vue'
   import sideBar from './components/side-bar.vue'
+  import filterTab from './components/filter-tab.vue'
   export default {
     components: {
       categoryHeader,
       categoryNav,
       sideBar,
+      filterTab,
     },
     data() {
       return {
@@ -98,13 +103,57 @@
             title: 'Minerssey',
           },
         ],
+        goodsList: [
+          {
+            title: '商品标题',
+            tags: ['包邮', '每4秒售出1个'],
+            price: 213.83,
+          },
+          {
+            title: '商品标题',
+            tags: ['满$3800包邮', '专家级肤色管理'],
+            price: 213.83,
+          },
+          {
+            title: '商品标题',
+            tags: ['满$3800包邮', '专家级肤色管理'],
+            price: 213.83,
+          },
+          {
+            title: '商品标题',
+            tags: ['满$3800包邮', '专家级肤色管理'],
+            price: 213.83,
+          },
+          {
+            title: '商品标题',
+            tags: ['满$3800包邮', '专家级肤色管理'],
+            price: 213.83,
+          },
+          {
+            title: '商品标题',
+            tags: ['满$3800包邮', '专家级肤色管理'],
+            price: 213.83,
+          },
+          {
+            title: '商品标题',
+            tags: ['满$3800包邮', '专家级肤色管理'],
+            price: 213.83,
+          },
+        ],
       }
     },
     methods: {
-      sideChangeHandler() {},
+      sideChangeHandler() {
+        // 修改content
+      },
     },
     // other options and methods
   }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+  .content {
+    display: flex;
+    column-gap: 10px;
+  }
+</style>
